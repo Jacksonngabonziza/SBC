@@ -274,7 +274,7 @@ public class login1 extends javax.swing.JFrame {
         if((usern.length()!=0) && (passw.length()!=0)){
         try {
             PreparedStatement select=con3.prepareStatement("SELECT * FROM users WHERE username=?");
-           
+            PreparedStatement insert=con3.prepareStatement("insert into logs(username)values(?)");
 
             
             select.setString(1, usern);
@@ -289,7 +289,10 @@ public class login1 extends javax.swing.JFrame {
                  if(passw.equals(passwrd)){
                  loader.show();
                   login.hide();
+                  insert.setString(1,userr);
+                  insert.executeUpdate();
                   Home m = new Home();
+                  m.userdetails(userr);
                   //m.setVisible(true);
                m.show();
                dispose();

@@ -22,7 +22,7 @@ public class database {
             
 
  
-        } catch (Exception exx) {
+        } catch (ClassNotFoundException | SQLException exx) {
             System.out.println("check:::::"+exx);
         }
         
@@ -42,7 +42,7 @@ public class database {
        // Connection con1=DriverManager.getConnection("jdbc:mysql://"+connectionString,"evisitors_evisitor","Rwanda123!");
         Connection con1=DriverManager.getConnection("jdbc:mysql://localhost/SBC","root","");
        return con1; 
-        } catch (Exception exx) {
+        } catch (ClassNotFoundException | SQLException exx) {
            System.out.println("check:::::"+exx);
         }
     
